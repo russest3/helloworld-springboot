@@ -1,0 +1,15 @@
+version: 0.1
+phases:
+  pre_build:
+    commands:
+      - apt-get -y update
+      - apt-get -y install maven
+  build:
+    commands:
+      - mvn package
+  post_build:
+    commands:
+      - echo "build complete"
+artifacts:
+  files: target/spring-boot-helloworld-0.0.1-SNAPSHOT.jar
+  discard-paths: yes
